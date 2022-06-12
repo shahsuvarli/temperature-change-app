@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      temp: 10,
+      color: "white",
+    };
+    this.increaseTemp = this.increaseTemp.bind(this);
+    this.decreaseTemp = this.decreaseTemp.bind(this);
+  }
+
+  increaseTemp() {
+    this.setState({ temp: this.state.temp + 1 });
+  }
+  decreaseTemp() {
+    this.setState({ temp: this.state.temp - 1 });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="main">
+          <div className="submain">
+            <div
+              className="temp-circle"
+              style={{
+                backgroundColor:
+                  this.state.temp <= 0
+                    ? "#DBF1FD"
+                    : this.state.temp < 15
+                    ? "yellow"
+                    : this.state.temp < 25
+                    ? "orange"
+                    : "red",
+                color: this.state.temp >= 15 ? "white" : "black",
+              }}
+            >
+              {this.state.temp} C°
+            </div>
+          </div>
+          <div className="buttons">
+            <button className="minus" onClick={this.decreaseTemp}>
+              -
+            </button>
+            <button className="plus" onClick={this.increaseTemp}>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

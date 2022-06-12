@@ -1,38 +1,52 @@
+body{
+  background-color: dodgerblue;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
 }
-
-.App-link {
-  color: #61dafb;
+.main {
+  margin-top: 50px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submain {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+.temp-circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.minus,
+.plus {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-color: white;
+  color: dodgerblue;
+  font-weight: bold;
+  border: none;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 50px;
+  margin: 10px;
+  margin-top: 60px;
+}
+.minus, .plus:hover{
+  cursor: pointer;
+}
+.buttons {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
 }
